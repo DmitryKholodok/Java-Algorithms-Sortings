@@ -4,8 +4,9 @@ import java.util.Random;
 
 public class MyArray {
 
-    private final int ARR_DEFAULT_SIZE = 7;
+    private final int ARR_DEFAULT_SIZE = 10;
     private int[] arr;
+    private int[] sortedArr;
 
     public MyArray() {
         arr = new int[ARR_DEFAULT_SIZE];
@@ -24,10 +25,10 @@ public class MyArray {
     }
 
 
-    public int[] sort() {
-        int[] notSortedArr = arr.clone();
+    public void sort() {
+        sortedArr = arr.clone();
         Sorting kindOfSort = new BubbleSort();
-        return kindOfSort.toSort(notSortedArr);
+        kindOfSort.toSort(sortedArr);
     }
 
     public int[] getArray() {
@@ -37,7 +38,7 @@ public class MyArray {
     @Override
     public String toString() {
         String str = "";
-        for(int i : arr)
+        for(int i : sortedArr)
             str = str + String.valueOf(i) + " ";
         return str;
     }
