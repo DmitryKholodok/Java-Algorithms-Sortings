@@ -27,7 +27,7 @@ public class MyArray {
 
     public void sort() {
         sortedArr = arr.clone();
-        Sorting kindOfSort = new InsertionSort();
+        Sorting kindOfSort = new SelectionSort();
         kindOfSort.toSort(sortedArr);
     }
 
