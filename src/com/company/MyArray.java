@@ -11,6 +11,7 @@ public class MyArray {
     public MyArray() {
         arr = new int[ARR_DEFAULT_SIZE];
         fillEmptyArr();
+        printArr();
     }
 
     public MyArray(int[] arr) {
@@ -24,10 +25,17 @@ public class MyArray {
         }
     }
 
+    private void printArr() {
+        for(int i = 0; i < arr.length; i++)
+            System.out.print(arr[i] + " ");
+        System.out.println("\n");
+    }
+
 
     public void sort() {
         sortedArr = arr.clone();
-        Sorting kindOfSort = new SelectionSort();
+        Sorting kindOfSort = new Quicksort();
+        System.out.println(kindOfSort.getClass().getName());
         kindOfSort.toSort(sortedArr);
     }
 
